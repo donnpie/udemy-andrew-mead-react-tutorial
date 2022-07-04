@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Route} from 'react-router-dom';
+import Landing from './landing/Landing.jsx';
+import CounterApp from './counter/CounterApp.jsx';
+import IndecisionApp from './indecision/IndecisionApp';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <BrowserRouter >
+          <Landing/>
+          {/* <Route exact={true} path="/" component={Landing} /> */}
+          <Route path="/counter-app" component={CounterApp} />
+          <Route path="/indecision-app" component={IndecisionApp} />
+
+     </BrowserRouter>
     </div>
   );
 }
